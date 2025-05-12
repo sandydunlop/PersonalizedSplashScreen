@@ -3,6 +3,7 @@ package eu.midnightdust.customsplashscreen.texture;
 import net.minecraft.client.resource.metadata.TextureResourceMetadata;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.ResourceTexture;
+import net.minecraft.client.texture.TextureContents;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
@@ -16,15 +17,15 @@ public class EmptyTexture extends ResourceTexture {
         super(location);
     }
 
-    protected TextureData loadTextureData(ResourceManager resourceManager) {
+    public TextureContents loadContents(ResourceManager resourceManager) {
         try {
             InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("empty.png");
-            TextureData texture = null;
+            TextureContents texture = null;
 
             if( input != null ) {
 
                 try {
-                    texture = new TextureData(new TextureResourceMetadata(true, true), NativeImage.read(input));
+                    texture = new TextureContents(NativeImage.read(input), new TextureResourceMetadata(true, true));
                 } finally {
                     input.close();
                 }
@@ -33,7 +34,7 @@ public class EmptyTexture extends ResourceTexture {
 
             return texture;
         } catch (IOException var18) {
-            return new TextureData(var18);
+            return TextureContents.createMissing();
         }
     }
 
