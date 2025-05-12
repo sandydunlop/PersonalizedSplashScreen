@@ -29,9 +29,9 @@ public class MixinMidnightConfig extends Screen {
 
     @Inject(at = @At("HEAD"), method = "init")
     protected void init(CallbackInfo ci) {
-        if(this.modid.equals("customsplashscreen")) {
+        if(this.modid.equals("personalizedsplashscreen")) {
             this.addDrawableChild(ButtonWidget.builder(Text.literal("Preview"), (button) -> {
-                MidnightConfig.write("customsplashscreen");
+                MidnightConfig.write("personalizedsplashscreen");
                 (Objects.requireNonNull(this.client)).setOverlay(
                                 new SplashOverlay(client, SimpleResourceReload.create(ResourceManager.Empty.INSTANCE, List.of()
                                         ,Object::notify,Object::notify,new CompletableFuture<>()), throwable -> {}, true));

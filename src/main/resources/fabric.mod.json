@@ -1,23 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "customsplashscreen",
+  "id": "personalizedsplashscreen",
   "version": "${version}",
 
-  "name": "Custom Splash Screen",
+  "name": "Personalized Splash Screen",
   "description": "Change minecraft's loading screen to your liking! Completely configurable!",
   "authors": [
+    "Sandy Dunlop",
     "Motschen",
     "TeamMidnightDust",
     "HypherionSA"
   ],
   "contact": {
-    "homepage": "https://www.midnightdust.eu/",
-    "sources": "https://github.com/TeamMidnightDust/CustomSplashScreen",
-    "issues": "https://github.com/TeamMidnightDust/CustomSplashScreen/issues"
+    "homepage": "https://github.com/sandydunlop/",
+    "sources": "https://github.com/sandydunlop/PersonalizedSplashScreen",
+    "issues": "https://github.com/sandydunlop/PersonalizedSplashScreen/issues"
   },
 
   "license": "MIT",
-  "icon": "assets/customsplashscreen/icon.png",
+  "icon": "assets/personalizedsplashscreen/icon.png",
 
   "environment": "client",
   "entrypoints": {

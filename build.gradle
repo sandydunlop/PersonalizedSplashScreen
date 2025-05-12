@@ -75,7 +75,7 @@ publishing {
 ext {
 	releaseChangelog = {
 		def changes = new StringBuilder()
-		changes << "## Custom Splash Screen v$project.version for $project.minecraft_version\n[View the changelog](https://www.github.com/TeamMidnightDust/CustomSplashScreen/commits/)"
+		changes << "## Personalized Splash Screen v$project.version for $project.minecraft_version\n[View the changelog](https://www.github.com/sandydunlop/PersonalizedSplashScreen/commits/)"
 		def proc = "git log --max-count=1 --pretty=format:%s".execute()
 		proc.in.eachLine { line ->
 			def processedLine = line.toString()
@@ -90,7 +90,7 @@ ext {
 
 unifiedPublishing {
 	project {
-		displayName = "CustomSplashScreen v$project.version - Fabric $project.minecraft_version"
+		displayName = "PersonalizedSplashScreen v$project.version - Fabric $project.minecraft_version"
 		releaseType = "$project.release_type"
 		changelog = releaseChangelog()
 		gameVersions = []

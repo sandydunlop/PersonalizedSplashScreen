@@ -10,7 +10,7 @@ import java.io.*;
 import java.nio.file.*;
 
 public class CustomSplashScreenClient implements ClientModInitializer {
-    public static File CONFIG_PATH = new File(FabricLoader.getInstance().getConfigDir() + "/customsplashscreen");
+    public static File CONFIG_PATH = new File(FabricLoader.getInstance().getConfigDir() + "/personalizedsplashscreen");
     public static final Path BackgroundTexture = Paths.get(CONFIG_PATH + "/background.png");
     public static final Path WideLogoTexture = Paths.get(CONFIG_PATH + "/wide_logo.png");
     public static final Path SquareLogoTexture = Paths.get(CONFIG_PATH + "/square_logo.png");
@@ -20,7 +20,7 @@ public class CustomSplashScreenClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        CustomSplashScreenConfig.init("customsplashscreen", CustomSplashScreenConfig.class);
+        CustomSplashScreenConfig.init("personalizedsplashscreen", CustomSplashScreenConfig.class);
 
         if (!CONFIG_PATH.exists()) { // Run when config directory is nonexistant //
             CONFIG_PATH.mkdir(); // Create our custom config directory //
@@ -48,6 +48,6 @@ public class CustomSplashScreenClient implements ClientModInitializer {
     }
 
     public static Identifier id(String path) {
-        return Identifier.of("customsplashscreen", path);
+        return Identifier.of("personalizedsplashscreen", path);
     }
 }
